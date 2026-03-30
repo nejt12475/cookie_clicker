@@ -1,0 +1,13 @@
+.cookie_counter{
+  position: relative;
+  color: white;
+  background: #755103;
+  width: 10%;
+  padding: 0.5%;
+  padding-right: 1%;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 15px;
+  font-family: Algerian;
+  text-align: right;
+}
