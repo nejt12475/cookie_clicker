@@ -1,0 +1,16 @@
+.item_to_purchase {
+  width: 100%;
+  font-family: Algerian;
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr;
+  row-gap: 1%;
+}
+img {
+  width: 80%;
+  align-self: center;
+  margin: 3% 0 3% 0;
+}
+
+.item_to_purchase > *{
+margin:5%;
+}

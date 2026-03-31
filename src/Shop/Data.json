@@ -1,0 +1,44 @@
+[{
+  "name": "Pointer",
+  "price": 20,
+  "img": "pointer.jpg"
+
+},
+  {
+    "name": "Pointer",
+    "price": 3199.24,
+    "img": "pointer.jpg"
+  },
+  {
+    "name": "Pointer",
+    "price": 3199.00,
+    "img": "pointer.jpg"
+  },
+  {
+    "name": "Pointer",
+    "price": 3199.00,
+    "img": "pointer.jpg"
+  },
+  {
+    "name": "Pointer",
+    "price": 3199.00,
+    "img": "pointer.jpg"
+  },{
+  "name": "Pointer",
+  "price": 3199.00,
+  "img": "pointer.jpg"
+},{
+  "name": "Pointer",
+  "price": 3199.00,
+  "img": "pointer.jpg"
+},{
+  "name": "Pointer",
+  "price": 3199.00,
+  "img": "pointer.jpg"
+},{
+  "name": "Pointer",
+  "price": 3199.00,
+  "img": "pointer.jpg"
+}
+
+]
