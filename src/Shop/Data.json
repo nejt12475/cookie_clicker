@@ -1,44 +1,65 @@
-[{
-  "name": "Pointer",
-  "price": 20,
-  "img": "pointer.jpg"
-
-},
+[
   {
+    "id": 1,
     "name": "Pointer",
-    "price": 3199.24,
-    "img": "pointer.jpg"
+    "price": 19,
+    "img": "pointer.jpg",
+    "count": 0,
+    "countfunc": "setpointercount",
+    "auto_click": 1
   },
   {
-    "name": "Pointer",
-    "price": 3199.00,
-    "img": "pointer.jpg"
+    "id": 2,
+    "name": "Oven",
+    "price": 499,
+    "img": "pointer.jpg",
+    "count": "0",
+    "countfunc": "setovencount",
+    "auto_click": 3
   },
   {
+    "id": 3,
     "name": "Pointer",
-    "price": 3199.00,
-    "img": "pointer.jpg"
+    "price": 1999,
+    "img": "pointer.jpg",
+    "count": 0,
+    "countfunc": "setpointercount",
+    "auto_click": 1
   },
   {
+    "id": 4,
     "name": "Pointer",
-    "price": 3199.00,
-    "img": "pointer.jpg"
-  },{
-  "name": "Pointer",
-  "price": 3199.00,
-  "img": "pointer.jpg"
-},{
-  "name": "Pointer",
-  "price": 3199.00,
-  "img": "pointer.jpg"
-},{
-  "name": "Pointer",
-  "price": 3199.00,
-  "img": "pointer.jpg"
-},{
-  "name": "Pointer",
-  "price": 3199.00,
-  "img": "pointer.jpg"
-}
-
+    "price": 39999,
+    "img": "pointer.jpg",
+    "count": 0,
+    "countfunc": "setpointercount",
+    "auto_click": 1
+  },
+  {
+    "id": 5,
+    "name": "Pointer",
+    "price": 999999,
+    "img": "pointer.jpg",
+    "count": 0,
+    "countfunc": "setpointercount",
+    "auto_click": 1
+  },
+  {
+    "id": 6,
+    "name": "Pointer",
+    "price": 1945,
+    "img": "pointer.jpg",
+    "count": 0,
+    "countfunc": "setpointercount",
+    "auto_click": 1
+  },
+  {
+    "id": 7,
+    "name": "Pointer",
+    "price": 1279,
+    "img": "pointer.jpg",
+    "count": 0,
+    "countfunc": "setpointercount",
+    "auto_click": 1
+  }
 ]

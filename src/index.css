@@ -72,6 +72,13 @@ div.shop-area{
   font-family: Algerian;
   padding: 1% 1% 2%;
    align-items: stretch;
+  display: grid;
+  justify-items: center;
+
+}
+.arrow{
+  width: 100%;
+
 }
 .items_to_purchase {
   width: 100%;
@@ -80,6 +87,7 @@ div.shop-area{
   row-gap: 1%;
   max-height: 70%;
 }
+
 @keyframes cookie-spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
