@@ -2,43 +2,43 @@
   {
     "id": 1,
     "name": "Pointer",
-    "price": 19,
-    "img": "pointer.jpg",
+    "price": 20,
+    "img": "pointer.png",
     "count": 0,
-    "countfunc": "setpointercount",
-    "auto_click": 1
+    "countfunc": "setClick_Strength",
+    "auto_click": 0
   },
   {
     "id": 2,
     "name": "Oven",
-    "price": 499,
-    "img": "pointer.jpg",
-    "count": "0",
+    "price": 400,
+    "img": "oven.jpg",
+    "count": 0,
     "countfunc": "setovencount",
     "auto_click": 3
   },
   {
     "id": 3,
-    "name": "Pointer",
-    "price": 1999,
-    "img": "pointer.jpg",
+    "name": "Grandma",
+    "price": 5000,
+    "img": "grandma.jpg",
     "count": 0,
-    "countfunc": "setpointercount",
-    "auto_click": 1
+    "countfunc": "setgranmacount",
+    "auto_click": 15
   },
   {
     "id": 4,
-    "name": "Pointer",
-    "price": 39999,
-    "img": "pointer.jpg",
+    "name": "Bakery",
+    "price": 40000,
+    "img": "cookieway.jpg",
     "count": 0,
-    "countfunc": "setpointercount",
-    "auto_click": 1
+    "countfunc": "setbakerycount",
+    "auto_click": 50
   },
   {
     "id": 5,
     "name": "Pointer",
-    "price": 999999,
+    "price": 1000000,
     "img": "pointer.jpg",
     "count": 0,
     "countfunc": "setpointercount",
@@ -61,5 +61,31 @@
     "count": 0,
     "countfunc": "setpointercount",
     "auto_click": 1
-  }
+  },
+  {
+    "id": 8,
+    "name": "Pointer",
+    "price": 1279,
+    "img": "pointer.jpg",
+    "count": 0,
+    "countfunc": "setpointercount",
+    "auto_click": 1
+  },
+  {
+    "id": 9,
+    "name": "Pointer",
+    "price": 1279,
+    "img": "pointer.jpg",
+    "count": 0,
+    "countfunc": "setpointercount",
+    "auto_click": 1
+  },{
+  "id": 10,
+  "name": "Pointer",
+  "price": 1279,
+  "img": "pointer.jpg",
+  "count": 0,
+  "countfunc": "setpointercount",
+  "auto_click": 1
+}
 ]

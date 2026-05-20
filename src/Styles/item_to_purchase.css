@@ -1,16 +1,30 @@
-.item_to_purchase {
+.item_to_purchase{
   width: 100%;
   font-family: Algerian;
-  display: grid;
-  grid-template-columns: 2fr 3fr 1fr;
+  display: flex;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: 2fr 1fr;
   row-gap: 1%;
+  height: 20%;
+  justify-content: space-between;
 }
 img {
-  width: 80%;
+  width: 20%;
   align-self: center;
-  margin: 3% 0 3% 0;
+  justify-self: center;
+  flex: 1 !important;
 }
 
 .item_to_purchase > *{
 margin:5%;
+  flex: 3;
+}
+button {
+  border: none;
+  outline: none;
+  width: 30%;
+  margin: 1% 0 !important;
+  padding: 0;
+  flex: initial !important;
+
 }

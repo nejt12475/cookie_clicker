@@ -1,11 +1,11 @@
 import React, {useEffect, useRef, useState} from 'react';
 import ReactDOM from 'react-dom/client';
+
 import './index.css';
 import Cookie_counter from "./Components/Cookie_counter";
 import data from "../../cookie_clicker/src/Shop/Data.json";
 import ItemToPurchase from "./Components/item_to_purchase";
-
-type CountFuncName = "setpointercount" | "setovencount";
+type CountFuncName = "";
 
 interface Props {
     id: number;
@@ -18,13 +18,13 @@ interface Props {
 }
 const shop_items: Props[] = data as unknown as Props[];
 const App = () => {
-    const [cookies, setCookies] = useState(0);
-    const handleCookieClick = () => {setCookies(cookies+1);}
-    // const [pointer_count, setpointercount] = useState(0);
-    // const [oven_count, setovencount] = useState(0);
+    const [cookies, setCookies] = useState(100000);
+    const [clicks, setClicks] = useState(0);
+    const handleCookieClick = () => {setCookies(cookies+click_strength);setClicks(clicks+click_strength)};
     const [upgrade_count, setCount] = useState<Map<number, number>>(new Map());
     const [click_per_secound, setClickPerSecond] = useState(0);
     const [page, setPage] = useState(1);
+    const [click_strength, setClickStrength] = useState(1);
 
     const cps = useRef<number>(0);
 
@@ -63,12 +63,13 @@ const App = () => {
     console.log(shop_items)
 
     return (
-        <React.StrictMode>
+        <React.StrictMode >
         <nav className={"navigation"}><span><h2>Leaderboard</h2><h2>Shop</h2><h2>Home</h2><h2>Home</h2></span><Cookie_counter cookies={cookies} cps={click_per_secound}/></nav>
             <div className="container">
                 <div className={"cookie-area"}>
                     <img src="/Assets/great-plains-windmill-todd-klassy.jpg" className={"back"} alt="" draggable={false}/>
-                   <img src="/Assets/ChocolateChip_1000.png" className={"cookie"} alt="cookie" draggable={false} onClick={handleCookieClick}/>
+                   <img src={"/Assets/ChocolateChip_1000.png"} className={"cookie"} alt="cookie" draggable={false} onClick={handleCookieClick}/>
+
                 </div>
 
                 <div className={"shop-area"}>
@@ -89,16 +90,20 @@ const App = () => {
                             cps={click_per_secound}
                             cpsf={(cps: number) => setClickPerSecond(cps)}
                             spec_cps={item.auto_click}
+                            click_strength={click_strength}
+                            clickf ={(click_strength: number) => setClickStrength(click_strength)}
+                            auto_click = {item.auto_click}
+
                         />
-                    ))}</div>
+                    ))}</div><span className={"sp"}>
                     <button className={"arrow"} onClick={() => setPage(prev => prev > 1 ? prev - 1 : prev)}> {'<---'} </button>
                     <button className={"arrow"} onClick={() => setPage(prev => prev < maxPage ? prev + 1 : prev)}> {'--->'} </button>
-
+</span>
                 </div>
             </div>
 
         </React.StrictMode>
-        /// Todo: Fix buttons for changing page at the shop are to not be so high
+        // Todo: Fix buttons for changing page at the shop are to not so high and should not change position
     );
 };
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
