@@ -18,7 +18,7 @@ interface Props {
 }
 const shop_items: Props[] = data as unknown as Props[];
 const App = () => {
-    const [cookies, setCookies] = useState(100000);
+    const [cookies, setCookies] = useState(0);
     const [clicks, setClicks] = useState(0);
     const handleCookieClick = () => {setCookies(cookies+click_strength);setClicks(clicks+click_strength)};
     const [upgrade_count, setCount] = useState<Map<number, number>>(new Map());
