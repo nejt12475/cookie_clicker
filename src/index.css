@@ -83,7 +83,7 @@ div.shop-area{
 }
 span.sp{
   display: flex;
-
+  align-items: end;
   width: 50%;
 }
 .arrow{
@@ -98,7 +98,26 @@ span.sp{
   font-family: Algerian;
   display: flow;
   row-gap: 1%;
-  max-height: 70%;
+}
+input[type="radio"]
+{
+    display: none;
+}
+input[type="radio"]:checked + label{
+  width: 100%;
+  height: 100%;
+  border: solid 1px white;
+  background-color: white;
+}
+input[type="radio"] + label{
+  border: solid 1px white;
+margin: 5%;
+
+  font-size: 200%;
+  align-self: center;
+}
+.UpgradePage{
+  display: none;
 }
 
 @keyframes cookie-spin {

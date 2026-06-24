@@ -4,7 +4,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Cookie_counter from "./Components/Cookie_counter";
 import data from "../../cookie_clicker/src/Shop/Data.json";
+import upgrade_data from "../../cookie_clicker/src/Upgrades/Data.json"
 import ItemToPurchase from "./Components/item_to_purchase";
+import UpgradeToPurchase from "./Components/upgrade_to_purchase";
+
 type CountFuncName = "";
 
 interface Props {
@@ -17,10 +20,11 @@ interface Props {
     auto_click: number;
 }
 const shop_items: Props[] = data as unknown as Props[];
+const updata: Props[] = upgrade_data as unknown as Props[];
+
 const App = () => {
-    const [cookies, setCookies] = useState(0);
-    const [clicks, setClicks] = useState(0);
-    const handleCookieClick = () => {setCookies(cookies+click_strength);setClicks(clicks+click_strength)};
+    const [cookies, setCookies] = useState(1000);
+    const handleCookieClick = () => {setCookies(cookies+click_strength);};
     const [upgrade_count, setCount] = useState<Map<number, number>>(new Map());
     const [click_per_secound, setClickPerSecond] = useState(0);
     const [page, setPage] = useState(1);
@@ -50,6 +54,24 @@ const App = () => {
         cps.current = click_per_secound;
     }, [ click_per_secound ]);
 
+    const category_check = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const id= e.currentTarget.id;
+        const shop_area = document.getElementById('shoppage');
+        const upgrades_area = document.getElementById('upgradepage');
+
+        if (id === "shop") {
+            // @ts-ignore
+            shop_area.style.display = "block";
+            // @ts-ignore
+            upgrades_area.style.display = "none";
+        } else if (id === "upgrades") {
+            // @ts-ignore
+            shop_area.style.display = "none";
+            // @ts-ignore
+            upgrades_area.style.display = "block";
+        }
+    }
+
     const oneTimeSecond = () => {
         let f:number = 10;
         setTimeout(() => {
@@ -73,6 +95,47 @@ const App = () => {
                 </div>
 
                 <div className={"shop-area"}>
+                    <div className={"Shop_Selection"}>
+                        <input type={"radio"} className={"radio"} onChange={category_check} name={"category-shop"} id={"shop"} defaultChecked={true}/>
+                        <label htmlFor={"shop"}>Shop</label>
+                        <input type={"radio"} className={"radio"} onChange={category_check} name={"category-shop"} id={"upgrades"}/>
+                        <label htmlFor={"upgrades"}>Upgrades</label>
+
+                    </div>
+
+
+                    <div className={"UpgradePage"} id={"upgradepage"}>
+
+                        <h2>Upgrade Shop{page}</h2>
+                        <div className="items_to_purchase">
+                            {updata.slice((page-1)*5, page*5).map((item, index) => (
+                                <UpgradeToPurchase
+                                    key={index}
+                                    img={item.img}
+                                    name={item.name}
+                                    price={item.price}
+                                    count={upgrade_count.get(item.id) ?? 0}
+                                    countfunc={(newCount: number) => {
+                                        count(item.id, newCount);
+                                    }}
+                                    cookies={cookies}
+                                    setC={setCookies}
+                                    cps={click_per_secound}
+                                    cpsf={(cps: number) => setClickPerSecond(cps)}
+                                    spec_cps={item.auto_click}
+                                    click_strength={click_strength}
+                                    clickf ={(click_strength: number) => setClickStrength(click_strength)}
+                                    auto_click = {item.auto_click}
+
+                                />
+                            ))}</div><span className={"sp"}>
+                    <button className={"arrow"} onClick={() => setPage(prev => prev > 1 ? prev - 1 : prev)}> {'<---'} </button>
+                    <button className={"arrow"} onClick={() => setPage(prev => prev < maxPage ? prev + 1 : prev)}> {'--->'} </button>
+</span></div>
+
+
+                    <div className={"ShopPage"} id={"shoppage"}>
+
                     <h2>Item Shop{page}</h2>
                     <div className="items_to_purchase">
                     {shop_items.slice((page-1)*5, page*5).map((item, index) => (
@@ -98,7 +161,7 @@ const App = () => {
                     ))}</div><span className={"sp"}>
                     <button className={"arrow"} onClick={() => setPage(prev => prev > 1 ? prev - 1 : prev)}> {'<---'} </button>
                     <button className={"arrow"} onClick={() => setPage(prev => prev < maxPage ? prev + 1 : prev)}> {'--->'} </button>
-</span>
+</span></div>
                 </div>
             </div>
 
